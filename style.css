@@ -18,20 +18,25 @@ body {
     background-color: rgb(17, 26, 43);
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
     border-radius: 10px;
     border: 3px solid black;
+    height: 80%;
+    width: 80%;
+    max-width: 500px;
 }
 
 .ecran {
     background-color: white;
-    width: 430px;
-    height: 150px;
+    width: 100%;
+    height: 15%;
+    min-height: 70px;
     padding: 10px;
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-between;
-    font-size: 32px;
     margin-bottom: 20px;
     border-radius: 10px;
     border: 2px solid black;
@@ -41,13 +46,15 @@ body {
 
 .boutons {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(5, 100px);
-    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 2%;
+    width: 100%;
+    height: 80%;
 }
 
 .bouton {
-    font-size: 35px;
+    font-size: 2rem;
     border-radius: 10px;
     border: 2px solid black;
     background-color: rgb(255, 255, 255);
@@ -70,12 +77,28 @@ body {
 .resultZone {
     display: flex;
     justify-content: flex-end;
+    font-size: 1.8rem;
 }
 
 .calcZone {
-    font-size: 28px;
+    font-size: 1.5rem;
 }
 
 div[data-key="Enter"] {
     grid-column: span 2;
+}
+
+@media screen and (max-height: 700px) {
+    .resultZone {
+        font-size: 1.5rem;
+    }
+    .calcZone {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .bouton {
+        font-size: 1.3rem;
+    }
 }
